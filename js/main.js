@@ -284,7 +284,7 @@ $(window).on('load', function() {
     	e.preventDefault()
     	// alert("Данные не отправлены")
     	$.ajax({
-            url: 'nako/create.php',
+            url: './create.php',
             method: 'post',
             dataType: 'html',
             data: $('#mainForm').serialize(),
@@ -293,7 +293,8 @@ $(window).on('load', function() {
         		alert('Спасибо, данные отправлены, пожалуйста ожидайте, скоро Вас наберет менеджер')
                 console.log(data)
             },
-            error: function(){
+            error: function(e){
+							console.log(e)
             	alert("Ошибка! Данные не были отправлены")
             }
         })  
@@ -322,7 +323,7 @@ $(window).on('load', function() {
     	e.preventDefault()
     	// alert("Данные не отправлены")
     	$.ajax({
-            url: 'nako/reviews_create.php',
+            url: './create.php',
             method: 'post',
             dataType: 'html',
             data: $('#reviewsForm').serialize(),

@@ -138,10 +138,10 @@
 				<div class="container" style="margin-top: 150px;">
 					<div class="row">
 						<div class="col-xl-12">
-							<?php if (isset($_GET['service']) && isset($_GET['product']) && isset($_GET['city'])) {?>
-								<h2><?php if (htmlspecialchars($_GET['service'], ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['service'], ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['product'], ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['product'], ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['city'], ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['city'], ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['price'], ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['price'], ENT_QUOTES, 'UTF-8') ?> <?php } ?></span></h2>
+							<?php if (isset($_GET['service']) && isset($_GET['product']) && isset($_GET['city'])) { ?>
+								<h2><?php if (htmlspecialchars($_GET['service']??"", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['service']??"", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['product']??"", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['product']??"", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['city']??"", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['city']??"", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['price']??"", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['price']??"", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span></h2>
 							<?php } else if (isset($_GET['service']) && isset($_GET['product'])) { ?>
-								<h2><span><?= htmlspecialchars($_GET['service'], ENT_QUOTES, 'UTF-8') ?></span><span><?= htmlspecialchars($_GET['product'], ENT_QUOTES, 'UTF-8') ?></span></h2>
+								<h2><span><?= htmlspecialchars($_GET['service']??"", ENT_QUOTES, 'UTF-8') ?></span><span><?= htmlspecialchars($_GET['product']??"", ENT_QUOTES, 'UTF-8') ?></span></h2>
 							<?php } else { ?>
 								<h2>
 									<span>Аренда</span><span>спецтехники</span><span>в Крыму</span>
@@ -765,7 +765,7 @@
 							<input type="text" class="form-control ym-record-keys" id="phone" name="phones[0][phone]" placeholder="+7(999)999-99-99" id="phone" required>
 						</label>
 						<input type="hidden" name="form" id="form" value="Форма обратной связи">
-						<input type="hidden" name="query" id="query" value="<?= htmlspecialchars($_GET['service'], ENT_QUOTES, 'UTF-8') ?? "" ?> <?= htmlspecialchars($_GET['product'], ENT_QUOTES, 'UTF-8') ?? "" ?> <?= htmlspecialchars($_GET['city'], ENT_QUOTES, 'UTF-8') ?? "" ?>">
+						<input type="hidden" name="query" id="query" value="<?= htmlspecialchars($_GET['service'] ?? "", ENT_QUOTES, 'UTF-8') ?? "" ?> <?= htmlspecialchars($_GET['product'] ?? "", ENT_QUOTES, 'UTF-8') ?? "" ?> <?= htmlspecialchars($_GET['city'] ?? "", ENT_QUOTES, 'UTF-8') ?? "" ?>">
 						<input type="hidden" name="ip" id="ip" value="<?= $_SERVER['SERVER_ADDR'] ?? "" ?>">
 						<label class="w-100">Комментарий
 							<textarea class="form-control ym-record-keys" name="comment" id="comment" cols="2" rows="2"></textarea>
