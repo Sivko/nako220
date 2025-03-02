@@ -2,20 +2,25 @@
 <html lang="ru">
 
 <head>
-	<title>Аренда Экскаваторов и др. строительной техники в Крыму</title>
+	<!-- <title>Аренда Экскаваторов и др. строительной техники в Крыму</title> -->
+	<?php if (isset($_GET['service']) && isset($_GET['product']) && isset($_GET['city'])) { ?>
+		<title><?php if (htmlspecialchars($_GET['service'] ?? "", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['service'] ?? "", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['product'] ?? "", ENT_QUOTES, 'UTF-8')) { ?><?= htmlspecialchars($_GET['product'] ?? "", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['city'] ?? "", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['city'] ?? "", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['price'] ?? "", ENT_QUOTES, 'UTF-8')) { ?><?= htmlspecialchars($_GET['price'] ?? "", ENT_QUOTES, 'UTF-8') ?> <?php } ?></title>
+	<?php } else if (isset($_GET['service']) && isset($_GET['product'])) { ?>
+		<title><?= htmlspecialchars($_GET['service'] ?? "", ENT_QUOTES, 'UTF-8') ?><?= htmlspecialchars($_GET['product'] ?? "", ENT_QUOTES, 'UTF-8') ?></title>
+	<?php } else { ?>
+		<title>Аренда спецтехники в Крыму</title>
+	<?php } ?>
 	<meta charset="UTF-8">
 	<meta name="description" content="Наша компания предлагает взять в аренду спецтехнику в Крыму на выгодных условиях. У нас представлен широкий модельный ряд известных мировых производителей UMG, DOOSAN, SUNWARD, LIUGONG, DIECI и т.д.">
 	<meta name="keywords" content="industry, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
+	<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+	<link rel="shortcut icon" href="/favicon/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+	<link rel="manifest" href="/favicon/site.webmanifest" />
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
@@ -139,9 +144,9 @@
 					<div class="row">
 						<div class="col-xl-12">
 							<?php if (isset($_GET['service']) && isset($_GET['product']) && isset($_GET['city'])) { ?>
-								<h2><?php if (htmlspecialchars($_GET['service']??"", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['service']??"", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['product']??"", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['product']??"", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['city']??"", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['city']??"", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['price']??"", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['price']??"", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span></h2>
+								<h2><?php if (htmlspecialchars($_GET['service'] ?? "", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['service'] ?? "", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['product'] ?? "", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['product'] ?? "", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['city'] ?? "", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['city'] ?? "", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span><?php if (htmlspecialchars($_GET['price'] ?? "", ENT_QUOTES, 'UTF-8')) { ?><span><?= htmlspecialchars($_GET['price'] ?? "", ENT_QUOTES, 'UTF-8') ?> <?php } ?></span></h2>
 							<?php } else if (isset($_GET['service']) && isset($_GET['product'])) { ?>
-								<h2><span><?= htmlspecialchars($_GET['service']??"", ENT_QUOTES, 'UTF-8') ?></span><span><?= htmlspecialchars($_GET['product']??"", ENT_QUOTES, 'UTF-8') ?></span></h2>
+								<h2><span><?= htmlspecialchars($_GET['service'] ?? "", ENT_QUOTES, 'UTF-8') ?></span><span><?= htmlspecialchars($_GET['product'] ?? "", ENT_QUOTES, 'UTF-8') ?></span></h2>
 							<?php } else { ?>
 								<h2>
 									<span>Аренда</span><span>спецтехники</span><span>в Крыму</span>
